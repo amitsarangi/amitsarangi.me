@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amit Sarangi, Software Architect." />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./assets/favicon.png">
     <title>Amit Sarangi</title>
-<style type="text/css">@import url(https://fonts.googleapis.com/css?family=Source+Serif+Pro:600|Work+Sans:200,300,400,600);
+<style type="text/css">@import url(https://fonts.googleapis.com/css?family=Source+Serif+Pro:600|Work+Sans:200,300,400);
 /* Minimal css reset */
 html {
   box-sizing: border-box;
@@ -133,7 +134,7 @@ section:not(.intro) .heading {
   margin-left: 4%;
   position: relative;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.75;
   color: #fe7880;
 }
@@ -274,7 +275,7 @@ a.email:hover {
 
 .footer .logo {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .footer .logo img {
@@ -338,6 +339,23 @@ a.email:hover {
             </div>
         </section>
     </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53384309-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-53384309-4');
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('./service-worker.js')
+                .then(function () { console.log('Service Worker Registered'); });
+        }
+
+    </script>
+
 </body>
 
 </html>
