@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:600|Work+Sans:200,300,400,600");
+
+/* Minimal css reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// vars
+$red: #fe7880;
+$black: #333447;
+
+// mixins
+@mixin on-desktop() {
+  @media only screen and (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin animate-in($delay) {
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: $delay;
+}
+
+// Animations
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Own CSS
+* {
+  font-family: "Work Sans", "Proxima Nova", "Helvetica Neue", Helvetica,
+    sans-serif;
+  color: $black;
+  line-height: 1.5;
+}
+
+.app {
+  margin: 36vh auto 0 auto;
+  width: 90%;
+  max-width: 1080px;
+  @media only screen and (min-width: 540px) {
+    width: 80%;
+  }
+}
+
+.text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.75;
+  letter-spacing: -0.02rem;
+}
+
+.intro {
+  padding: 0 2%;
+
+  h1 {
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 40px 0;
+    width: 96%;
+
+    @include on-desktop() {
+      width: 80%;
+    }
+
+    @include animate-in(0.2s);
+  }
+
+  .info {
+    @include animate-in(0.4s);
+  }
+
+  p {
+    padding: 8px 0;
+    margin-bottom: 1rem;
+    width: 96%;
+    @include on-desktop() {
+      width: 80%;
+    }
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+section:not(.intro) {
+  margin-top: 80px;
+  padding: 0 2%;
+  @include animate-in(0.4s);
+
+  .heading {
+    // Marker
+    &:before {
+      content: "";
+      margin: 22px calc(-8% - 40px);
+      width: 40px;
+      height: 1px;
+      background: $black;
+      display: none;
+      @include on-desktop() {
+        display: inline-block;
+      }
+      position: absolute;
+    }
+
+    margin-left: 4%;
+    @include on-desktop() {
+      margin-left: calc(40px + 8%);
+    }
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.75;
+    color: $red;
+  }
+
+  &.hello .heading {
+    &:before {
+      margin: 22px calc(-4% - 40px);
+    }
+    margin-left: 2%;
+    @include on-desktop() {
+      margin-left: calc(40px + 4%);
+    }
+  }
+
+  a.link {
+    display: block;
+    text-decoration: none;
+    border-bottom: solid 1px $black;
+    transition: all 0.3s ease;
+    font-size: 2.25rem;
+    font-weight: 200;
+    padding: 1em 2%;
+    margin-left: 2%;
+    @include on-desktop() {
+      margin-left: calc(40px + 8%);
+    }
+
+    &:hover {
+      color: $red;
+      border-bottom: solid 1px $red;
+    }
+  }
+
+  .content {
+    margin: 20px 2%;
+    @include on-desktop() {
+      margin-left: calc(40px + 4%);
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section.dev,
+section.social {
+  width: 100%;
+  @include on-desktop() {
+    display: inline-block;
+    width: 50%;
+  }
+}
+
+a.email {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px;
+  width: 250px;
+  font-size: 1.2rem;
+  font-weight: 200;
+  background: transparent;
+  border: 1px solid $black;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 60px;
+  font-weight: 300;
+
+  &:hover {
+    border: 1px solid $red;
+    color: $red;
+  }
+}
+
+.footer {
+  margin: 160px 0 80px !important;
+
+  .line {
+    margin: 0 auto;
+    height: 1px;
+    background: $black;
+    width: 96%;
+
+    @include on-desktop() {
+      width: 30%;
+    }
+  }
+
+  .quote {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .logo{
+    text-align: center;
+    margin-top: 40px;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+}
