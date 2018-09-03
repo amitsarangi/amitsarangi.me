@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./assets/favicon.png">
+    <title>Amit Sarangi</title>
+<style type="text/css">@import url(https://fonts.googleapis.com/css?family=Source+Serif+Pro:600|Work+Sans:200,300,400,600);
+/* Minimal css reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  font-family: "Work Sans", "Proxima Nova", "Helvetica Neue", Helvetica, sans-serif;
+  color: #333447;
+  line-height: 1.5;
+}
+
+.app {
+  margin: 36vh auto 0 auto;
+  width: 90%;
+  max-width: 1080px;
+}
+
+@media only screen and (min-width: 540px) {
+  .app {
+    width: 80%;
+  }
+}
+
+.text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.75;
+  letter-spacing: -0.02rem;
+}
+
+.intro {
+  padding: 0 2%;
+}
+
+.intro h1 {
+  font-family: "Source Serif Pro", Georgia, serif;
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 40px 0;
+  width: 96%;
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@media only screen and (min-width: 720px) {
+  .intro h1 {
+    width: 80%;
+  }
+}
+
+.intro .info {
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.intro p {
+  padding: 8px 0;
+  margin-bottom: 1rem;
+  width: 96%;
+}
+
+@media only screen and (min-width: 720px) {
+  .intro p {
+    width: 80%;
+  }
+}
+
+.intro p strong {
+  font-weight: 400;
+}
+
+section:not(.intro) {
+  margin-top: 80px;
+  padding: 0 2%;
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+section:not(.intro) .heading {
+  margin-left: 4%;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #fe7880;
+}
+
+section:not(.intro) .heading:before {
+  content: "";
+  margin: 22px calc(-8% - 40px);
+  width: 40px;
+  height: 1px;
+  background: #333447;
+  display: none;
+  position: absolute;
+}
+
+@media only screen and (min-width: 720px) {
+  section:not(.intro) .heading:before {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  section:not(.intro) .heading {
+    margin-left: calc(40px + 8%);
+  }
+}
+
+section:not(.intro).hello .heading {
+  margin-left: 2%;
+}
+
+section:not(.intro).hello .heading:before {
+  margin: 22px calc(-4% - 40px);
+}
+
+@media only screen and (min-width: 720px) {
+  section:not(.intro).hello .heading {
+    margin-left: calc(40px + 4%);
+  }
+}
+
+section:not(.intro) a.link {
+  display: block;
+  text-decoration: none;
+  border-bottom: solid 1px #333447;
+  transition: all 0.3s ease;
+  font-size: 2.25rem;
+  font-weight: 200;
+  padding: 1em 2%;
+  margin-left: 2%;
+}
+
+@media only screen and (min-width: 720px) {
+  section:not(.intro) a.link {
+    margin-left: calc(40px + 8%);
+  }
+}
+
+section:not(.intro) a.link:hover {
+  color: #fe7880;
+  border-bottom: solid 1px #fe7880;
+}
+
+section:not(.intro) .content {
+  margin: 20px 2%;
+}
+
+@media only screen and (min-width: 720px) {
+  section:not(.intro) .content {
+    margin-left: calc(40px + 4%);
+  }
+}
+
+.links {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section.dev,
+section.social {
+  width: 100%;
+}
+
+@media only screen and (min-width: 720px) {
+  section.dev,
+  section.social {
+    display: inline-block;
+    width: 50%;
+  }
+}
+
+a.email {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px;
+  width: 250px;
+  font-size: 1.2rem;
+  font-weight: 200;
+  background: transparent;
+  border: 1px solid #333447;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 60px;
+  font-weight: 300;
+}
+
+a.email:hover {
+  border: 1px solid #fe7880;
+  color: #fe7880;
+}
+
+.footer {
+  margin: 160px 0 80px !important;
+}
+
+.footer .line {
+  margin: 0 auto;
+  height: 1px;
+  background: #333447;
+  width: 96%;
+}
+
+@media only screen and (min-width: 720px) {
+  .footer .line {
+    width: 30%;
+  }
+}
+
+.footer .quote {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.footer .logo {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer .logo img {
+  width: 70px;
+  height: 70px;
+}
+
+
+/*# sourceMappingURL=styles.css.map*/</style></head>
+
+<body>
+    <div class="app">
+        <section class="intro">
+            <h1 class="title">Hi, I'm Amit. <br/> I'm a software developer.
+            </h1>
+            <div class="info">
+                <p class="subtitle text">
+                    I love trying new technologies and am very interested in designing and scaling system in large scale contexts. And gaming.
+                </p>
+                <p class="current text">
+                    <strong>Currently</strong> Software Architect at Gofore
+                </p>
+            </div>
+        </section>
+        <div class="links">
+            <section class="dev">
+                <div class="heading">
+                    Commits, pens and posts
+                </div>
+                <a href="https://github.com/amitsarangi" target="_blank" class="link">Github</a>
+                <a href="https://codepen.io/amitsarangi" target="_blank" class="link">Codepen</a>
+                <a href="https://medium.com/@amitsarangi" target="_blank" class="link">Blog</a>
+            </section>
+            <section class="social">
+                <div class="heading">
+                    Follow me on internet thingies
+                </div>
+                <a href="https://www.linkedin.com/in/amitsarangi" target="_blank" class="link">Linkedin</a>
+                <a href="https://twitter.com/amitsarangi" target="_blank" class="link">Twitter</a>
+                <a href="https://www.instagram.com/amitsarangi" target="_blank" class="link">Instagram</a>
+            </section>
+        </div>
+        <section class="hello">
+            <div class="heading">
+                Say hello
+            </div>
+            <div class="content">
+                <span class="text">Talk to me about programming, show me how passionate you are about things or just say
+                    hi. I’m all ears.
+                </span>
+                <a href="mailto:amit.getinfo@gmail.com" class="email">Email me</a>
+            </div>
+        </section>
+        <section class="footer">
+            <div class="line"></div>
+            <div class="quote text">
+                Code never lies, comments sometimes do.
+            </div>
+            <div class="logo">
+                <img src="./assets/icon.png" alt="Amit Sarangi">
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
