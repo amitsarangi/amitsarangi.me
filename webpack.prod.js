@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 var WebpackCleanPlugin = require("webpack-clean");
+var SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 
 const buildPath = path.resolve(__dirname, "dist");
 
@@ -62,7 +63,24 @@ module.exports = {
     }),
     new HtmlWebpackInlineSourcePlugin(),
     new CleanWebpackPlugin(buildPath),
-    new CopyWebpackPlugin([{ from: "./src/assets", to: "assets" }]),
-    new WebpackCleanPlugin(["dist/main", "dist/styles.css"])
+    new CopyWebpackPlugin([
+      { from: "./src/assets", to: "assets" },
+      { from: "./src/CNAME", to: "CNAME", toType: "file" }
+    ]),
+    new WebpackCleanPlugin(["dist/main", "dist/styles.css"]),
+    new SWPrecacheWebpackPlugin({
+      cacheId: "amitsarangi.me",
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      filename: "service-worker.js",
+      minify: true,
+      navigateFallback: "index.html",
+      staticFileGlobsIgnorePatterns: [
+        /\.map$/,
+        /asset-manifest\.json$/,
+        /main/,
+        /CNAME/,
+        /\.css$/
+      ]
+    })
   ]
 };
