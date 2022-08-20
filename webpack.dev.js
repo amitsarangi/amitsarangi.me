@@ -7,7 +7,9 @@ module.exports = {
   entry: "./src/index.scss",
   devServer: {
     port: 8080,
-    contentBase: path.join(__dirname, "dist")
+    static: {
+      directory: path.join(__dirname, "dist")
+    }
   },
   module: {
     rules: [
@@ -16,10 +18,7 @@ module.exports = {
         use: [
           {
             // creates style nodes from JS strings
-            loader: "style-loader",
-            options: {
-              sourceMap: true
-            }
+            loader: "style-loader"
           },
           {
             // translates CSS into CommonJS
@@ -32,9 +31,7 @@ module.exports = {
             // compiles Sass to CSS
             loader: "sass-loader",
             options: {
-              outputStyle: "expanded",
               sourceMap: true,
-              sourceMapContents: true
             }
           }
           // Please note we are not running postcss here
